@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzad Ahmed | AI Educator & Community Innovator</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0C0C0E',
+                        sidebar: '#08080A',
+                        accent: '#D1A054', // Editorial Gold
+                        line: '#2A2A2E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Crimson Pro', 'serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-[#E0E0E0] font-sans selection:bg-accent/30 selection:text-white overflow-x-hidden md:flex">
+
+    <!-- Custom Cursor -->
+    <div id="cursor" class="fixed w-8 h-8 rounded-full border border-accent/50 pointer-events-none z-[9999] transition-transform duration-100 ease-out hidden lg:block"></div>
+
+    <!-- Navigation (Sidebar on Desktop) -->
+    <nav class="fixed top-0 w-full z-50 border-b border-line bg-dark/80 backdrop-blur-md md:sticky md:top-0 md:w-[320px] md:h-screen md:min-w-[320px] md:border-r md:border-b-0 md:bg-sidebar md:flex md:flex-col md:p-12">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between md:h-auto md:p-0 md:flex-col md:items-start md:w-full">
+            <div class="mb-12 hidden md:block">
+                <span class="text-accent text-xs font-bold tracking-[0.2em] uppercase mb-2 block animate-fade-in">Founder & Educator</span>
+                <a href="#" class="text-4xl font-serif text-white leading-tight font-medium hover:text-accent transition-colors">Shahzad<br/>Ahmed</a>
+                <div class="mt-6 h-[1px] w-12 bg-accent"></div>
+            </div>
+            
+            <a href="#" class="text-xl font-serif font-bold tracking-tighter hover:text-accent transition-colors md:hidden">SA<span class="text-accent">.</span></a>
+            
+            <div class="hidden md:flex flex-col space-y-6 text-sm font-medium tracking-widest uppercase opacity-40 md:opacity-100 md:w-full">
+                <a href="#about" class="hover:text-accent transition-colors">01. The Vision</a>
+                <a href="#projects" class="hover:text-accent transition-colors opacity-40 hover:opacity-100">02. Selected Projects</a>
+                <a href="#initiatives" class="hover:text-accent transition-colors opacity-40 hover:opacity-100">03. Global Initiatives</a>
+                <a href="#skills" class="hover:text-accent transition-colors opacity-40 hover:opacity-100">04. Core Competencies</a>
+            </div>
+
+            <div class="mt-auto hidden md:block">
+                <p class="text-xs text-[#808085] leading-relaxed mb-6">Pioneering Urdu AI and rural digital innovation to empower the next billion users.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-8 h-8 rounded-full border border-line flex items-center justify-center hover:bg-white/5 cursor-pointer transition-colors"><span class="text-[10px]">IN</span></a>
+                    <a href="#" class="w-8 h-8 rounded-full border border-line flex items-center justify-center hover:bg-white/5 cursor-pointer transition-colors"><span class="text-[10px]">TW</span></a>
+                    <a href="#" class="w-8 h-8 rounded-full border border-line flex items-center justify-center hover:bg-white/5 cursor-pointer transition-colors"><span class="text-[10px]">GH</span></a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" id="menu-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Content Wrapper -->
+    <div class="flex-grow md:grid md:grid-cols-2 md:auto-rows-min bg-line gap-[1px]">
+        <!-- Hero Section -->
+        <header class="relative min-h-screen md:min-h-0 md:h-[60vh] md:col-span-2 flex items-center bg-dark p-6 md:p-20 overflow-hidden">
+            <span class="absolute top-10 right-10 text-[100px] font-serif italic text-white/[0.03] select-none hidden md:block pointer-events-none">Vision</span>
+            <div class="max-w-3xl relative z-10 w-full">
+                <h1 class="text-5xl md:text-7xl font-serif text-white max-w-2xl leading-[1.1] mb-6 animate-slide-up">
+                    Designing the Future of <span class="text-accent underline decoration-accent/30 underline-offset-8">Urdu AI</span> & Innovation.
+                </h1>
+                <p class="text-lg md:text-xl text-[#A0A0A5] max-w-xl animate-fade-in" style="animation-delay: 0.2s">
+                    Bridging the gap between frontier technology and rural accessibility through Urdu-first AI models.
+                </p>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-6 md:p-16 bg-[#0F0F12] border-t md:border-t-0 border-line">
+            <div class="flex items-center justify-between mb-12">
+                <h3 class="text-xs font-bold tracking-widest uppercase text-accent">Impact Highlights</h3>
+                <span class="text-[10px] opacity-30 uppercase tracking-widest font-bold">2020—2024</span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-x-8 gap-y-12">
+                <div class="border-l-2 border-accent/20 pl-6 group">
+                   <p class="text-4xl font-serif text-white group-hover:text-accent transition-colors">05+</p>
+                   <p class="text-[10px] uppercase tracking-widest opacity-50 font-bold mt-2">Years of Impact</p>
+                </div>
+                <div class="border-l-2 border-accent/20 pl-6 group">
+                   <p class="text-4xl font-serif text-white group-hover:text-accent transition-colors">150k+</p>
+                   <p class="text-[10px] uppercase tracking-widest opacity-50 font-bold mt-2">Students Educated</p>
+                </div>
+                <div class="border-l-2 border-accent/20 pl-6 group">
+                   <p class="text-4xl font-serif text-white group-hover:text-accent transition-colors">40+</p>
+                   <p class="text-[10px] uppercase tracking-widest opacity-50 font-bold mt-2">Rural Tech Hubs</p>
+                </div>
+                <div class="border-l-2 border-accent/20 pl-6 group">
+                   <p class="text-4xl font-serif text-white group-hover:text-accent transition-colors">15</p>
+                   <p class="text-[10px] uppercase tracking-widest opacity-50 font-bold mt-2">Global Awards</p>
+                </div>
+            </div>
+
+            <div class="mt-16 space-y-6 text-[#A0A0A5] text-sm leading-relaxed max-w-xl italic">
+                <p>
+                    "My mission is to localize AI for Urdu-speaking and rural populations, ensuring accessibility for the next billion users."
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-6 md:p-16 bg-dark">
+            <div class="flex items-center justify-between mb-12">
+                <h3 class="text-xs font-bold tracking-widest uppercase text-accent">Selected Projects</h3>
+                <span class="text-[10px] opacity-30 uppercase tracking-widest font-bold">Portfolio</span>
+            </div>
+
+            <ul class="space-y-8">
+                <li class="group cursor-pointer border-b border-line pb-8 hover:border-accent/40 transition-colors">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-xl font-serif text-white group-hover:text-accent transition-colors">Urdu AI Educator</p>
+                            <p class="text-[10px] opacity-50 italic uppercase tracking-widest mt-1">NLP for the Subcontinent</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all text-accent -translate-x-2 group-hover:translate-x-0"></i>
+                    </div>
+                </li>
+                <li class="group cursor-pointer border-b border-line pb-8 hover:border-accent/40 transition-colors">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-xl font-serif text-white group-hover:text-accent transition-colors">Impact Hub</p>
+                            <p class="text-[10px] opacity-50 italic uppercase tracking-widest mt-1">Social Tracking SaaS</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all text-accent -translate-x-2 group-hover:translate-x-0"></i>
+                    </div>
+                </li>
+                <li class="group cursor-pointer border-b border-line pb-8 hover:border-accent/40 transition-colors">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-xl font-serif text-white group-hover:text-accent transition-colors">Village Digital Labs</p>
+                            <p class="text-[10px] opacity-50 italic uppercase tracking-widest mt-1">Offline-first Education</p>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all text-accent -translate-x-2 group-hover:translate-x-0"></i>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Initiatives Section -->
+        <section id="initiatives" class="py-20 px-6 md:p-16 bg-dark border-t border-line md:border-t-0">
+            <h3 class="text-xs font-bold tracking-widest uppercase text-accent mb-12">Social Initiatives</h3>
+            <div class="grid gap-8">
+                <div class="flex gap-6 group">
+                    <span class="text-accent/30 font-serif italic text-4xl">01</span>
+                    <div>
+                        <h4 class="text-lg font-serif text-white mb-2">Rural Lab</h4>
+                        <p class="text-xs text-[#808085] leading-relaxed">Incubating ideas in remote areas to solve local challenges using global technology.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 group">
+                    <span class="text-accent/30 font-serif italic text-4xl">02</span>
+                    <div>
+                        <h4 class="text-lg font-serif text-white mb-2">Creative Collective</h4>
+                        <p class="text-xs text-[#808085] leading-relaxed">A mentorship program for young digital creators in Urdu-speaking regions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-6 md:p-16 bg-dark border-t border-line">
+            <h3 class="text-xs font-bold tracking-widest uppercase text-accent mb-12">Core Competencies</h3>
+            <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 border border-line text-[10px] uppercase tracking-widest rounded-full hover:border-accent hover:text-accent transition-colors cursor-default">AI Strategy</span>
+                <span class="px-4 py-2 border border-line text-[10px] uppercase tracking-widest rounded-full hover:border-accent hover:text-accent transition-colors cursor-default">Product Design</span>
+                <span class="px-4 py-2 border border-line text-[10px] uppercase tracking-widest rounded-full hover:border-accent hover:text-accent transition-colors cursor-default">Community Building</span>
+                <span class="px-4 py-2 border border-line text-[10px] uppercase tracking-widest rounded-full hover:border-accent hover:text-accent transition-colors cursor-default">EdTech</span>
+                <span class="px-4 py-2 border border-line text-[10px] uppercase tracking-widest rounded-full hover:border-accent hover:text-accent transition-colors cursor-default">Urban Innovation</span>
+                <span class="px-4 py-2 border border-accent text-accent text-[10px] uppercase tracking-widest rounded-full cursor-default">Urdu NLP</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-accent p-12 md:p-20 flex flex-col justify-center group cursor-pointer md:col-span-2 border-t border-line">
+            <p class="text-black text-[10px] font-bold uppercase tracking-[0.3em] mb-4">Available for Collaboration</p>
+            <h2 class="text-4xl md:text-6xl font-serif text-black leading-none group-hover:translate-x-4 transition-transform duration-500">Let's start a conversation <span class="inline-block transition-transform group-hover:translate-x-4">→</span></h2>
+            <div class="mt-12 flex flex-col md:flex-row md:items-center gap-8 border-t border-black/10 pt-8">
+                <a href="mailto:shahzad.cri@gmail.com" class="text-black text-lg font-serif italic hover:underline">shahzad.cri@gmail.com</a>
+                <div class="flex gap-6">
+                    <a href="#" class="text-[10px] text-black font-bold uppercase tracking-widest hover:underline">LinkedIn</a>
+                    <a href="#" class="text-[10px] text-black font-bold uppercase tracking-widest hover:underline">Twitter</a>
+                    <a href="#" class="text-[10px] text-black font-bold uppercase tracking-widest hover:underline">GitHub</a>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-sidebar border-t border-line md:col-span-2">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <p class="text-[10px] uppercase tracking-widest text-[#808085]">&copy; 2026 Shahzad Ahmed. All rights reserved.</p>
+            <p class="text-[10px] uppercase tracking-widest text-[#808085] flex items-center gap-2">Pioneering <span class="text-accent underline">Rural Innovation</span></p>
+        </div>
+    </footer>
+    </div>
+   <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
+</body>
+</html>
